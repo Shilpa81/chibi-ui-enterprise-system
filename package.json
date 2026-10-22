@@ -1,0 +1,63 @@
+{
+  "name": "chibi-ui",
+  "version": "0.2.0",
+  "description": "Chibi – an enterprise React + TypeScript UI system with token-driven theme and density.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "./dist/styles.css"
+  ],
+  "scripts": {
+    "build": "tsup && cp src/chibi.css dist/styles.css",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.3",
+    "@storybook/react-vite": "^10.6.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "jsdom": "^30.1.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^10.6.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "design-system",
+    "enterprise",
+    "typescript",
+    "components"
+  ]
+}
